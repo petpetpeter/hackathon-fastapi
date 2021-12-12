@@ -2,10 +2,11 @@ from typing import Optional
 
 from fastapi import FastAPI
 from pydantic import BaseModel
-
+from decouple import config
 import os
 print(os.environ)
-path = os.environ.get('path')
+path = config('path')
+
 app = FastAPI()
 
 
@@ -14,15 +15,20 @@ app = FastAPI()
 def read_root():
     return {"Hello": "World"}
 
+@app.get("/"+path)
+def read_root():
+    return {"Hello": "World"}
+
 
 class Payload(BaseModel):
     url: str
     image_id: str
+
 @app.post("/"+path+"/predict")
 def predict(payload: Payload):
 
   return {
-    "image_id" : payload['image_id'],
+    "image_id" : payload.image_id,
     "bbox_list": [{
         "category_id": 0,
         "bbox": {

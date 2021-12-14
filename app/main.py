@@ -41,14 +41,14 @@ def predict(payload: Payload):
         "image_id" : payload.image_id,
         "bbox_list": [
             {
-                "category_id": 1,
+                "category_id": 1,   # 1, 2, 3, or 4
                 "bbox": {
-                    "x": 0,
-                    "y": 220.666,
-                    "w": 1050.098,
-                    "h": 525.333
+                    "x": 0,         # top left (pixel)
+                    "y": 220.666,   # top left (pixel)
+                    "w": 1050.098,  # width (pixel)
+                    "h": 525.333    # height (pixel)
                 },
-                "score": 0.635
+                "score": 0.635      # confidence score
             },
             {
                 "category_id": 2,

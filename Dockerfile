@@ -1,17 +1,11 @@
-FROM python:3.8
+FROM python:3.9
 
-WORKDIR app
+WORKDIR /code
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive  apt-get install -y python3-pip libgl1-mesa-dev libglib2.0-0
+COPY ./requirements.txt /code/requirements.txt
 
-COPY requirements.txt .
-COPY .env.local .
-RUN pip3 install --upgrade pip \
-    && pip3 install -r requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-EXPOSE 8000
-
-COPY . .
-
+COPY ./app /code/app
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

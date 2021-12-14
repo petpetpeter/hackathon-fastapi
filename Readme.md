@@ -1,3 +1,11 @@
+### How to test
+
+https://fastapi.tiangolo.com/
+
+```javascript
+{"url":"https://rovula.com/image.png","image_id":1}
+```
+
 #### Example payload:
 
 ```javascript

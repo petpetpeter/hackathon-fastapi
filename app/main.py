@@ -1,15 +1,9 @@
-from typing import Optional
-
 from fastapi import FastAPI
 from pydantic import BaseModel
 from decouple import config
-import os
-print(os.environ)
+
 path = config('path')
-
 app = FastAPI()
-
-
 
 @app.get("/")
 def read_root():
@@ -38,5 +32,5 @@ def predict(payload: Payload):
           "h": 525.3333333333333
           },
         "score": 0.63508011493555
-      }]
+      }],
     }

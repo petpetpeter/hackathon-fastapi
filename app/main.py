@@ -9,6 +9,7 @@ app = FastAPI()
 def read_root():
     return {"Hello": "World"}
 
+
 @app.get("/"+path)
 def read_root():
     return {"Hello": "World"}
@@ -18,8 +19,12 @@ class Payload(BaseModel):
     url: str
     image_id: str
 
+
 @app.post("/"+path+"/predict")
 def predict(payload: Payload):
+    # TODO: Deep learning & Machine learning code here. For example:
+    # img_bytes = requests.get(payload.url).content
+    # img = cv2.imdecode(np.asarray(bytearray(img_bytes), dtype=np.uint8), cv2.IMREAD_COLOR)
 
   return {
     "image_id" : payload.image_id,

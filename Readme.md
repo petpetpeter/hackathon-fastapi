@@ -79,6 +79,10 @@ Go to http://127.0.0.1:8000 in the browser. Go to http://127.0.0.1:8000/docs to 
 
 ![](./doc/img2.png)
 
+You can try sending the example image url (https://github.com/Rovula/hackathon-fastapi/blob/master/doc/20201107122807098.png?raw=true) like this to see your implementation response:
+
+![](./doc/img3.png)
+
 
 ## 3. Build Local Docker Image for Local Testing
 

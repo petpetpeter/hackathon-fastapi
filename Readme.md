@@ -58,7 +58,7 @@ First, go into the project folder and install the dependencies:
 pip install -r requirements.txt
 ```
 
-For **local testing**, you have to change the [`path`](https://github.com/Rovula/hackathon-fastapi/blob/master/app/main.py#L10) variable. For example:
+For **local testing**, you have to change the [`path`](https://github.com/Rovula/hackathon-fastapi/blob/master/app/main.py#L11) variable. For example:
 
 ```python
 # print(os.environ)
@@ -89,7 +89,7 @@ Go to http://127.0.0.1:8000 in the browser. Go to http://127.0.0.1:8000/docs to 
 
 ### 3.2 Build local Docker image
 
-To build a local Docker image **for local testing**, you have to change the [`path`](https://github.com/Rovula/hackathon-fastapi/blob/master/app/main.py#L10) variable as described in [section 2](#2-usage).
+To build a local Docker image **for local testing**, you have to change the `path` variable as described in [section 2](#2-usage).
 
 First go into the project folder where the `Dockerfile` exists.
 

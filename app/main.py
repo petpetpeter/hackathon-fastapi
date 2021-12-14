@@ -1,9 +1,10 @@
+import os
 from typing import Optional
 
+import requests
 from fastapi import FastAPI
 from pydantic import BaseModel
 from decouple import config
-import os
 
 
 print(os.environ)
@@ -31,7 +32,9 @@ class Payload(BaseModel):
 
 @app.post("/"+path+"/predict")
 def predict(payload: Payload):
-    # TODO: Deep learning & Machine leanring code here.
+    # TODO: Deep learning & Machine learning code here. For example:
+    # img_bytes = requests.get(payload.url).content
+    # img = cv2.imdecode(np.asarray(bytearray(img_bytes), dtype=np.uint8), cv2.IMREAD_COLOR)
 
     # Example response must be like the below structure. If there is no bounding
     # boxes in the image, please return an empty list of "bbox_list".

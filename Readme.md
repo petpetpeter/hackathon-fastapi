@@ -60,7 +60,7 @@ First, go into the project folder and install the dependencies:
 pip install -r requirements.txt
 ```
 
-For **local testing**, you have to change the [`path`](https://github.com/Rovula/hackathon-fastapi/blob/master/app/main.py#L11) variable. For example:
+For **local testing**, you have to change the [`path`](https://github.com/Rovula/hackathon-fastapi/blob/master/app/main.py#L10) variable. For example:
 
 ```python
 # print(os.environ)

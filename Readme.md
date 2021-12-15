@@ -15,8 +15,10 @@ Once your machine learning model finished the prediction, return the (bounding b
 ### Example payload:
 
 ```javascript
-{"url":"https://rovula.com/image.png","image_id":1}
+{"url":"https://github.com/Rovula/hackathon-fastapi/blob/master/doc/20201107122805838.png?raw=true","image_id":20201107122805838}
 ```
+
+![](./doc/20201107122805838.png)
 
 ### Example cURL:
 
@@ -25,26 +27,30 @@ curl -X POST \
   http://localhost/env/predict \
   -H 'accept: application/json' \
   -H 'content-type: application/json' \
-  -d '{"url":"https://rovula.com/image.png","image_id":1}'
+  -d '{"url":"https://github.com/Rovula/hackathon-fastapi/blob/master/doc/20201107122805838.png?raw=true","image_id":20201107122805838}'
 ```
 
 ### Example Response:
 
+Note that the unit of (x,y) pixel, width, and height is pixel.
+
 ```javascript
 {
-    "image_id" : 1,
+    "image_id" : 20201107122805838,
     "bbox_list": [{
         "category_id": 1,
         "bbox": {
-          "x": 0,
-          "y": 220.66666666666669,
-          "w": 1050.0986882341442,
-          "h": 525.3333333333333
-          },
-        "score": 0.63508011493555
+            "x": 279.3333333333333,
+            "y": 848.0,
+            "w": 534.6666666666667,
+            "h": 1069.3333333333333
+        },
+        "score": 0.999
       }]
 };
 ```
+
+![](./doc/20201107122805838_labelled.png)
 
 ## 2. Usage
 
@@ -81,7 +87,7 @@ Go to http://127.0.0.1:8000 in the browser. Go to http://127.0.0.1:8000/docs to 
 
 ![](./doc/img2.png)
 
-You can try sending the example image url (https://github.com/Rovula/hackathon-fastapi/blob/master/doc/20201107122807098.png?raw=true) like this to see your implementation response:
+You can try sending the example image url (https://github.com/Rovula/hackathon-fastapi/blob/master/doc/20201107122805838.png?raw=true) like this to see your implementation response:
 
 ![](./doc/img3.png)
 
@@ -97,7 +103,7 @@ To build a local Docker image **for local testing**, you have to change the `pat
 
 First go into the project folder where the `Dockerfile` exists.
 
-Now, we will build the image and give the _name_ to our image. The _name_ will be the `repository_url` that we sent to each team via email.
+Now, we will build the image and give the *name* to our image. The *name* will be the `repository_url` that we sent to each team via email.
 
 ```bash
 docker build -t repository_url .

@@ -36,7 +36,7 @@ Note that the unit of (x,y) pixel, width, and height is pixel.
 
 ```javascript
 {
-    "image_id" : 20201107122805838,
+    "image_id" : "20201107122805838",
     "bbox_list": [{
         "category_id": 1,
         "bbox": {
